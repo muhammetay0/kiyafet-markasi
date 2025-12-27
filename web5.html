@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>HAKKIMIZDA</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html" style="color: white;">HARMONY | BİZ KİMİZ?</a></h1>
+    </header>
+
+    <main id="h-main">
+        <h2>Kuruluş Hikayemiz</h2>
+        <p>2015'ten beri en iyi hizmeti sunuyoruz...</p>
+        <img src="https://cf.kizlarsoruyor.com/q16148004/4c86f9b4-4698-47b2-b38e-eb7e08b37629.jpg" width="300">
+    </main>
+
+    <script>
+        window.addEventListener("load", function() {
+            setTimeout(function() {
+                let n = prompt("İsminiz nedir?");
+                if(n) alert("Hoş geldin " + n);
+            }, 500);
+        });
+
+        const m = document.getElementById("h-main");
+        const d = document.createElement("div");
+        d.style.marginTop = "30px";
+        d.innerHTML = '<input type="text" id="k" placeholder="Kod Girin" style="padding:10px;"><button id="b" style="padding:10px; background:#ff6600; color:white; border:none; cursor:pointer;">Kodu Sorgula</button><p id="son"></p>';
+        m.appendChild(d);
+
+        document.getElementById("b").addEventListener("click", function() {
+            let val = document.getElementById("k").value;
+            let res = document.getElementById("son");
+            if(val.length >= 5) {
+                res.innerHTML = "<strong>Kod Onaylandı! İndiriminiz: %20</strong>";
+                res.style.color = "green";
+            } else {
+                res.innerText = "Hatalı kod!";
+                res.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>

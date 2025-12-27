@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>ERKEK ÜRÜNLERİ</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html" style="color: white;">HARMONY | ERKEK</a></h1>
+    </header>
+
+    <main>
+        <p id="duyuru" style="text-align: center; font-weight: bold; color: #ff6600;">STOKLARIMIZ YENİLENMİŞTİR.</p>
+        <h2>ÜST KATALOG</h2>
+        <table>
+            <tr><th>Görsel</th><th>Renk</th><th>Ürün Adı</th><th>Fiyat</th></tr>
+            <tr>
+                <td><img src="https://www.orgutarif.com/wp-content/uploads/2021/08/Erkek-Orme-Kazak-Modelleri2-1536x1536.jpg"></td>
+                <td>KREM</td><td>KAZAK</td><td><del>1800 TL</del> <mark>1200 TL</mark></td>
+            </tr>
+            <tr>
+                <td><img src="https://oversizegiyim.com.tr/wp-content/uploads/2015/12/on-siyah-duz-basic.jpg"></td>
+                <td>SİYAH</td><td>TİŞÖRT</td><td><mark>450 TL</mark></td>
+            </tr>
+        </table>
+    </main>
+
+    <script>
+        let k = ["Kış sezonunda %20 indirim!", "Erkek reyonunda kargo bedava!", "Yeni sezon ürünler geldi!"];
+        let i = 0;
+        setInterval(function() {
+            document.getElementById("duyuru").innerText = k[i];
+            i = (i + 1) % k.length;
+        }, 3000);
+
+        document.querySelectorAll('tr').forEach(function(s, index) {
+            if(index !== 0) {
+                s.addEventListener("mouseover", function() { this.style.backgroundColor = "#fff5ee"; });
+                s.addEventListener("mouseout", function() { this.style.backgroundColor = "transparent"; });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>KADIN ÜRÜNLERİ</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html" style="color: white;">HARMONY | KADIN</a></h1>
+    </header>
+
+    <main>
+        <h2>ÜST KATALOG</h2>
+        <table>
+            <tr><th>Görsel</th><th>Renk</th><th>Ürün Adı</th><th>Fiyat</th></tr>
+            <tr>
+                <td><img src="https://cdn.dsmcdn.com/ty1631/prod/QC/20250129/17/e44941aa-3ea2-3126-977a-8b13539e115e/1_org_zoom.jpg"></td>
+                <td>BEYAZ</td><td>KAPŞUNLU HIRKA</td><td><mark>800 TL</mark></td>
+            </tr>
+        </table>
+    </main>
+
+    <script>
+        const imgs = document.querySelectorAll('table img');
+        imgs.forEach(function(m) {
+            m.addEventListener("click", function() {
+                if (this.style.borderWidth === "5px") {
+                    this.style.border = "1px solid #ddd";
+                } else {
+                    this.style.border = "5px solid #ff6600";
+                    alert("Seçilen ürün favorilere eklendi!");
+                }
+            });
+            m.style.cursor = "pointer";
+        });
+    </script>
+</body>
+</html>

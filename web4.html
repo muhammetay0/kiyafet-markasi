@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>ÇOCUK ÜRÜNLERİ</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html" style="color: white;">HARMONY | ÇOCUK</a></h1>
+    </header>
+
+    <main>
+        <h2>KATALOG</h2>
+        <table>
+            <tr><th>Görsel</th><th>Renk</th><th>Ürün Adı</th><th>Fiyat</th></tr>
+            <tr>
+                <td><img src="https://img-lcwaikiki.mncdn.com/pim/productimages/20251/7738435/v2/l_20251-s5dv55z4-fke_a.gif"></td>
+                <td>MAVİ</td><td>TİŞÖRT</td><td><mark>350 TL</mark></td>
+            </tr>
+        </table>
+    </main>
+
+    <script>
+        let t = 0;
+        const s = document.createElement("div");
+        s.setAttribute("style", "position:fixed; bottom:20px; right:20px; background:#333; color:#fff; padding:20px; border-radius:50px; border:3px solid #ff6600; font-weight:bold;");
+        s.innerHTML = "Sepet: 0 TL";
+        document.body.appendChild(s);
+
+        document.querySelectorAll('mark').forEach(function(f) {
+            f.style.cursor = "pointer";
+            f.addEventListener("click", function() {
+                t += parseInt(this.innerText);
+                s.innerHTML = "🛒 Toplam: " + t + " TL";
+                this.style.backgroundColor = "#ff6600";
+                this.style.color = "white";
+            });
+        });
+    </script>
+</body>
+</html>
